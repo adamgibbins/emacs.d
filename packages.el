@@ -3,14 +3,15 @@
 (require 'package)
 
 (add-to-list 'package-archives
-  '("marmalade" . "http://maramalade-repo.org/packages/") t)
+  '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar elpa-packages '(evil))
+(defvar elpa-packages '(evil
+                        magit))
 
 (dolist (p elpa-packages)
   (when (not (package-installed-p p))
